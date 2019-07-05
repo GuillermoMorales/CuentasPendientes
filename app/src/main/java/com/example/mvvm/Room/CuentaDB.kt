@@ -46,7 +46,7 @@ abstract  class CuentaDB:RoomDatabase() {
         }
 
         suspend fun populateDatabase(cuentaDao: CuentaDao){
-            cuentaDao.deleteAllBooks()
+           // cuentaDao.deleteAllBooks()
 
             var cuenta = Cuenta("Cuenta Super", "Santillana", 0)
             cuentaDao.insert(cuenta)
