@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/destination_library"
+        android:icon="@drawable/ic_library_books_black_24dp"
+        android:title="Books"/>
+    <item
+        android:id="@+id/destination_favorites"
+        android:icon="@drawable/ic_star_black_24dp"
+        android:title="Favorites"/>
+
+</menu>

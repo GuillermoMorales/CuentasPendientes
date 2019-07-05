@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/destination_library">
+
+    <fragment
+        android:id="@+id/destination_library"
+        android:name="com.example.mvvm.Fragments.LibraryFragment"
+        android:label="Library"
+        tools:layout="@layout/fragment_library">
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/destination_book" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_book"
+        android:name="com.example.mvvm.Fragments.BookFragment"
+        android:label="Book"
+        tools:layout="@layout/fragment_book" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="editorial"
+            app:argType="string" />
+        <argument
+            android:name="favorite"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_new_book"
+        android:name="com.example.mvvm.Fragments.NewBookFragment"
+        android:label="Add Book"
+        tools:layout="@layout/fragment_new_book" />
+    <fragment
+        android:id="@+id/destination_favorites"
+        android:name="com.example.mvvm.Fragments.FavoritesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorites">
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/destination_book" />
+    </fragment>
+</navigation>
