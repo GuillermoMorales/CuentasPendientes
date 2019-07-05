@@ -24,7 +24,7 @@
             android:textAllCaps="true"
             android:textSize="20sp"
             android:layout_margin="16dp"
-            android:text="Name"/>
+            android:text="cargo"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -34,7 +34,7 @@
             android:textAllCaps="true"
             android:textSize="20sp"
             android:layout_margin="16dp"
-            android:text="Editorial"/>
+            android:text="abono"/>
 
 
         <CheckBox

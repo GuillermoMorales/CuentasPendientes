@@ -14,27 +14,29 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/txtName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:imeOptions="actionNext"
-            android:hint="Name"/>
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:imeOptions="actionNext"
+                android:hint="Cargo" android:background="#004D4040" android:inputType="numberDecimal"
+                android:textSize="24sp"/>
 
         <EditText
-            android:id="@+id/txtEditorial"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:imeOptions="actionDone"
-            android:hint="Editorial"/>
+                android:id="@+id/txtEditorial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:imeOptions="actionDone"
+                android:hint="abono" android:textSize="24sp"/>
 
 
         <Button
-            android:id="@+id/save_book"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Save Book"/>
+                android:id="@+id/save_book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardar transaccion" android:background="#9D91BB" android:autoText="false"
+                android:drawableBottom="@android:drawable/ic_menu_save"/>
 
     </LinearLayout>
 
