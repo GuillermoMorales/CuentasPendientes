@@ -49,13 +49,7 @@ class FavoritesFragment : Fragment() {
                 }
             }
         }
-        val recyclerView = view.recyclerviewFavorites
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(view.context)
 
-        viewModel.allFavoritesCuenta.observe(this, Observer { books ->
-            books?.let { adapter.setFavorites(it) }
-        })
     }
 
 }
