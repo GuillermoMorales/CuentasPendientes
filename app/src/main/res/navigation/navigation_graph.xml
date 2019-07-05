@@ -6,41 +6,41 @@
     app:startDestination="@id/destination_library">
 
     <fragment
-        android:id="@+id/destination_library"
-        android:name="com.example.mvvm.Fragments.LibraryFragment"
-        android:label="Library"
-        tools:layout="@layout/fragment_library">
+            android:id="@+id/destination_library"
+            android:name="com.example.mvvm.Fragments.LibraryFragment"
+            android:label="Tus cuentas"
+            tools:layout="@layout/fragment_library">
         <action
-            android:id="@+id/next_action"
-            app:destination="@id/destination_book" />
+                android:id="@+id/next_action"
+                app:destination="@id/destination_book"/>
     </fragment>
     <fragment
-        android:id="@+id/destination_book"
-        android:name="com.example.mvvm.Fragments.BookFragment"
-        android:label="Book"
-        tools:layout="@layout/fragment_book" >
+            android:id="@+id/destination_book"
+            android:name="com.example.mvvm.Fragments.BookFragment"
+            android:label="Tus movimientos de este mes"
+            tools:layout="@layout/fragment_book">
         <argument
-            android:name="name"
-            app:argType="string" />
+                android:name="name"
+                app:argType="string"/>
         <argument
-            android:name="editorial"
-            app:argType="string" />
+                android:name="editorial"
+                app:argType="string"/>
         <argument
-            android:name="favorite"
-            app:argType="integer" />
+                android:name="favorite"
+                app:argType="integer"/>
     </fragment>
     <fragment
-        android:id="@+id/destination_new_book"
-        android:name="com.example.mvvm.Fragments.NewBookFragment"
-        android:label="Add Book"
-        tools:layout="@layout/fragment_new_book" />
+            android:id="@+id/destination_new_book"
+            android:name="com.example.mvvm.Fragments.NewBookFragment"
+            android:label="Agregar una nueva transaccion"
+            tools:layout="@layout/fragment_new_book"/>
     <fragment
-        android:id="@+id/destination_favorites"
-        android:name="com.example.mvvm.Fragments.FavoritesFragment"
-        android:label="Favorites"
-        tools:layout="@layout/fragment_favorites">
+            android:id="@+id/destination_favorites"
+            android:name="com.example.mvvm.Fragments.FavoritesFragment"
+            android:label="Perfil"
+            tools:layout="@layout/fragment_favorites">
         <action
-            android:id="@+id/next_action"
-            app:destination="@id/destination_book" />
+                android:id="@+id/next_action"
+                app:destination="@id/destination_book"/>
     </fragment>
 </navigation>

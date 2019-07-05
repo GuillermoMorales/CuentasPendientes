@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" tools:srcCompat="@tools:sample/avatars" android:id="@+id/imageView"
+            android:background="#00050505" android:contentDescription="@string/todo"/>
+
+    <TextView
+            android:text="@string/bienvenido_emanuel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView" android:visibility="visible"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:background="#ECE8EC"
+            app:fontFamily="sans-serif-condensed" android:textStyle="bold" android:textSize="40"/>
+
+
+    <CheckBox
+            android:text="@string/recibir_alertas_al_exceder_presupuesto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/checkBox2"/>
+    <CalendarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/calendarView"/>
+    <Button
+            android:text="@string/exportar_tus_transacciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/button" android:background="#977D9C"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:drawableBottom="@android:drawable/ic_menu_edit"/>
+</LinearLayout>

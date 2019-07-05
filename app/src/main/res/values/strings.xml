@@ -3,4 +3,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="recibir_alertas_al_exceder_presupuesto">Recibir alertas al exceder presupuesto?</string>
+    <string name="exportar_tus_transacciones">Exportar tus transacciones</string>
+    <string name="bienvenido_emanuel">Bienvenido Emanuel</string>
+    <string name="todo">TODO</string>
 </resources>
