@@ -17,7 +17,7 @@ import com.example.mvvm.Room.Entities.Cuenta
 import com.example.mvvm.ViewModel.ViewModel
 import kotlinx.android.synthetic.main.fragment_favorites.view.*
 
-class CuentaseleccionadaFragment : Fragment() {
+class FavoritesFragment : Fragment() {
 
     lateinit var viewModel: ViewModel
 

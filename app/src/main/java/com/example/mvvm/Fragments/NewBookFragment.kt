@@ -15,7 +15,7 @@ import com.example.mvvm.ViewModel.ViewModel
 import kotlinx.android.synthetic.main.fragment_new_book.*
 import java.lang.Exception
 
-class NuevaCuentaFragment : Fragment() {
+class NewBookFragment : Fragment() {
 
     lateinit var viewModel:ViewModel
 
