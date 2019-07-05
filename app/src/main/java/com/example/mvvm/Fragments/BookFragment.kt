@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import com.example.mvvm.R
 import kotlinx.android.synthetic.main.fragment_book.*
 
-class CuentaFragment : Fragment() {
+class BookFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

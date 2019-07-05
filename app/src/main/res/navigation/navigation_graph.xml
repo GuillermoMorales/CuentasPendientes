@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/destination_library"
-        android:name="com.example.mvvm.Fragments.BancoFragment"
+        android:name="com.example.mvvm.Fragments.LibraryFragment"
         android:label="Library"
         tools:layout="@layout/fragment_library">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/destination_book"
-        android:name="com.example.mvvm.Fragments.CuentaFragment"
+        android:name="com.example.mvvm.Fragments.BookFragment"
         android:label="Book"
         tools:layout="@layout/fragment_book" >
         <argument
@@ -31,12 +31,12 @@
     </fragment>
     <fragment
         android:id="@+id/destination_new_book"
-        android:name="com.example.mvvm.Fragments.NuevaCuentaFragment"
+        android:name="com.example.mvvm.Fragments.NewBookFragment"
         android:label="Add Book"
         tools:layout="@layout/fragment_new_book" />
     <fragment
         android:id="@+id/destination_favorites"
-        android:name="com.example.mvvm.Fragments.CuentaseleccionadaFragment"
+        android:name="com.example.mvvm.Fragments.FavoritesFragment"
         android:label="Favorites"
         tools:layout="@layout/fragment_favorites">
         <action
