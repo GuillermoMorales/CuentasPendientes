@@ -2,21 +2,21 @@ package com.example.mvvm.Repositories
 
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
-import com.example.mvvm.Room.Dao.BookDao
-import com.example.mvvm.Room.Entities.Book
+import com.example.mvvm.Room.Dao.CuentaDao
+import com.example.mvvm.Room.Entities.Cuenta
 
-class BookRepository(private val bookDao: BookDao) {
+class BookRepository(private val cuentaDao: CuentaDao) {
 
-    fun getAllBooks():LiveData<List<Book>> = bookDao.getAllBooks()
+    fun getAllBooks():LiveData<List<Cuenta>> = cuentaDao.getAllBooks()
 
-    fun getAllFavoritesBooks():LiveData<List<Book>> = bookDao.getFavoritesBooks(1)
+    fun getAllFavoritesBooks():LiveData<List<Cuenta>> = cuentaDao.getFavoritesBooks(1)
 
-    fun getBooksByName(name: String):LiveData<List<Book>> = bookDao.getByName(name)
-
-    @WorkerThread
-    suspend fun insert(book: Book) = bookDao.insert(book)
+    fun getBooksByName(name: String):LiveData<List<Cuenta>> = cuentaDao.getByName(name)
 
     @WorkerThread
-    suspend fun updateFavorite(idBook:Int, favorite:Int) = bookDao.updateFavoriteState(idBook,favorite)
+    suspend fun insert(cuenta: Cuenta) = cuentaDao.insert(cuenta)
+
+    @WorkerThread
+    suspend fun updateFavorite(idBook:Int, favorite:Int) = cuentaDao.updateFavoriteState(idBook,favorite)
 
 }

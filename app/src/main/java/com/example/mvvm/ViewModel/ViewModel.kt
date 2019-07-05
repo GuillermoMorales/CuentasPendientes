@@ -5,27 +5,27 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.mvvm.Repositories.BookRepository
-import com.example.mvvm.Room.Entities.Book
-import com.example.mvvm.Room.LibraryDB
+import com.example.mvvm.Room.Entities.Cuenta
+import com.example.mvvm.Room.CuentaDB
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ViewModel(app:Application): AndroidViewModel(app) {
 
     private val bookRepository:BookRepository
-    val allBooks: LiveData<List<Book>>
-    val allFavoritesBook: LiveData<List<Book>>
+    val allBooks: LiveData<List<Cuenta>>
+    val allFavoritesCuenta: LiveData<List<Cuenta>>
 
     init {
-        val bookDao = LibraryDB.getInstance(app, viewModelScope).bookDao()
+        val bookDao = CuentaDB.getInstance(app, viewModelScope).bookDao()
         bookRepository = BookRepository(bookDao)
         allBooks = bookRepository.getAllBooks()
-        allFavoritesBook = bookRepository.getAllFavoritesBooks()
+        allFavoritesCuenta = bookRepository.getAllFavoritesBooks()
     }
 
 
-    fun insertBook(book: Book) = viewModelScope.launch(Dispatchers.IO){
-        bookRepository.insert(book)
+    fun insertBook(cuenta: Cuenta) = viewModelScope.launch(Dispatchers.IO){
+        bookRepository.insert(cuenta)
     }
 
     fun updateFavorite(id: Int, favorite:Int) = viewModelScope.launch(Dispatchers.IO){

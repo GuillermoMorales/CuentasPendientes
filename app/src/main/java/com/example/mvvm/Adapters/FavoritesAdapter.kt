@@ -9,15 +9,15 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm.R
-import com.example.mvvm.Room.Entities.Book
+import com.example.mvvm.Room.Entities.Cuenta
 import kotlinx.android.synthetic.main.book_info.view.*
 
 abstract class FavoritesAdapter internal  constructor(context: Context): RecyclerView.Adapter<FavoritesAdapter.FavoriteViewHolder>(){
 
     private val inflater = LayoutInflater.from(context)
-    private var books = emptyList<Book>()
+    private var books = emptyList<Cuenta>()
 
-    abstract fun setClickListenerToFavoriteBook(holder: FavoriteViewHolder, book: Book)
+    abstract fun setClickListenerToFavoriteBook(holder: FavoriteViewHolder, cuenta: Cuenta)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
         val itemView = inflater.inflate(R.layout.book_info,parent,false)
@@ -37,8 +37,8 @@ abstract class FavoritesAdapter internal  constructor(context: Context): Recycle
 
     }
 
-    internal fun setFavorites(book: List<Book>){
-        this.books = book
+    internal fun setFavorites(cuenta: List<Cuenta>){
+        this.books = cuenta
         notifyDataSetChanged()
     }
 

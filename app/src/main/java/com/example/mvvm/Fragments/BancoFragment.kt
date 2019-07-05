@@ -2,7 +2,6 @@ package com.example.mvvm.Fragments
 
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,23 +10,26 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mvvm.Adapters.FavoritesAdapter
+import com.example.mvvm.Adapters.LibraryAdapter
 
 import com.example.mvvm.R
-import com.example.mvvm.Room.Entities.Book
+import com.example.mvvm.Room.Entities.Cuenta
 import com.example.mvvm.ViewModel.ViewModel
-import kotlinx.android.synthetic.main.fragment_favorites.view.*
+import kotlinx.android.synthetic.main.fragment_library.view.*
 
-class FavoritesFragment : Fragment() {
+class BancoFragment : Fragment() {
 
     lateinit var viewModel: ViewModel
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_favorites, container, false)
+        val view = inflater.inflate(R.layout.fragment_library, container, false)
 
         init(view)
+
+
 
         return view
     }
@@ -35,28 +37,33 @@ class FavoritesFragment : Fragment() {
     fun init(view: View){
         viewModel = ViewModelProviders.of(this).get(ViewModel::class.java)
 
-        var adapter = object : FavoritesAdapter(view.context){
-            override fun setClickListenerToFavoriteBook(holder: FavoriteViewHolder, book: Book) {
-                holder.container.setOnClickListener {
-                    val nextAction = FavoritesFragmentDirections.nextAction(book.name,book.editorial,book.favorite)
+        var adapter = object : LibraryAdapter(view.context){
+            override fun setClickListenerToBook(holderLibrary: LibraryViewHolder, cuenta: Cuenta) {
+                holderLibrary.container.setOnClickListener {
+                    val nextAction = LibraryFragmentDirections.nextAction(cuenta.name,cuenta.editorial,cuenta.favorite)
                     Navigation.findNavController(it).navigate(nextAction)
                 }
-                holder.checkBox.setOnClickListener {
-                    if (holder.checkBox.isChecked){
-                        viewModel.updateFavorite(book.id,1)
+                holderLibrary.checkBox.setOnClickListener {
+                    if (holderLibrary.checkBox.isChecked){
+                        viewModel.updateFavorite(cuenta.id,1)
                     } else{
-                        viewModel.updateFavorite(book.id,0)
+                        viewModel.updateFavorite(cuenta.id,0)
                     }
                 }
             }
+
         }
-        val recyclerView = view.recyclerviewFavorites
+        val recyclerView = view.recyclerviewLibrary
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(view.context)
 
-        viewModel.allFavoritesBook.observe(this, Observer {books ->
-            books?.let { adapter.setFavorites(it) }
+
+        viewModel.allBooks.observe(this, Observer { books ->
+            books?.let { adapter.setBooks(it) }
         })
     }
+
+
+
 
 }

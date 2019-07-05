@@ -5,27 +5,27 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.example.mvvm.Room.Dao.BookDao
-import com.example.mvvm.Room.Entities.Book
+import com.example.mvvm.Room.Dao.CuentaDao
+import com.example.mvvm.Room.Entities.Cuenta
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-@Database(entities = [Book::class], version = 5, exportSchema = false)
-abstract  class LibraryDB:RoomDatabase() {
+@Database(entities = [Cuenta::class], version = 5, exportSchema = false)
+abstract  class CuentaDB:RoomDatabase() {
 
-    abstract fun bookDao():BookDao
+    abstract fun bookDao():CuentaDao
 
     companion object {
         @Volatile
-        private var INSTANCE: LibraryDB? = null
+        private var INSTANCE: CuentaDB? = null
 
-        fun getInstance(appContext:Context, scope: CoroutineScope): LibraryDB {
+        fun getInstance(appContext:Context, scope: CoroutineScope): CuentaDB {
             val tempInstance = INSTANCE
             if (tempInstance != null) return tempInstance
             synchronized(this){
                 val instance = Room
-                    .databaseBuilder(appContext, LibraryDB::class.java, "library_db")
+                    .databaseBuilder(appContext, CuentaDB::class.java, "library_db")
                         .fallbackToDestructiveMigration()
                         .addCallback(DatabaseCallback(scope))
                     .build()
@@ -45,22 +45,22 @@ abstract  class LibraryDB:RoomDatabase() {
             }
         }
 
-        suspend fun populateDatabase(bookDao: BookDao){
-            bookDao.deleteAllBooks()
+        suspend fun populateDatabase(cuentaDao: CuentaDao){
+            cuentaDao.deleteAllBooks()
 
-            var book = Book("Harry Potter", "Santillana", 0)
-            bookDao.insert(book)
-            book = Book("Harry Potter 2", "Santillana", 1)
-            bookDao.insert(book)
+            var cuenta = Cuenta("Cuenta Super", "Santillana", 0)
+            cuentaDao.insert(cuenta)
+            cuenta= Cuenta("Cuenta Banco Agricola", "Santillana", 1)
+            cuentaDao.insert(cuenta)
 
-            book = Book("Maze Runner", "Santillana 2", 0)
-            bookDao.insert(book)
+            cuenta= Cuenta("Cuenta Carro", "Santillana 2", 0)
+            cuentaDao.insert(cuenta)
 
-            book = Book("La Llorona", "Mexicana", 1)
-            bookDao.insert(book)
+            cuenta= Cuenta("Cuenta Universidad", "Mexicana", 1)
+            cuentaDao.insert(cuenta)
 
-            book = Book("Eso", "Scare", 1)
-            bookDao.insert(book)
+            cuenta= Cuenta("Cuenta Alquiler", "Scare", 1)
+            cuentaDao.insert(cuenta)
         }
     }
 

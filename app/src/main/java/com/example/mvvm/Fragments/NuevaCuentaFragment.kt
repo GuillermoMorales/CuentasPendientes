@@ -10,12 +10,12 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 
 import com.example.mvvm.R
-import com.example.mvvm.Room.Entities.Book
+import com.example.mvvm.Room.Entities.Cuenta
 import com.example.mvvm.ViewModel.ViewModel
 import kotlinx.android.synthetic.main.fragment_new_book.*
 import java.lang.Exception
 
-class NewBookFragment : Fragment() {
+class NuevaCuentaFragment : Fragment() {
 
     lateinit var viewModel:ViewModel
 
@@ -33,7 +33,7 @@ class NewBookFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(ViewModel::class.java)
 
         save_book.setOnClickListener {
-            val book = Book(txtName.text.toString(), txtEditorial.text.toString(), 0)
+            val book = Cuenta(txtName.text.toString(), txtEditorial.text.toString(), 0)
 
             try {
                 viewModel.insertBook(book)
@@ -41,7 +41,7 @@ class NewBookFragment : Fragment() {
                 Log.d("CODIGO", "Creado con exito")
                 txtName.setText("")
                 txtEditorial.setText("")
-                Toast.makeText(view.context, "Book created!!", Toast.LENGTH_LONG).show()
+                Toast.makeText(view.context, "Cuenta created!!", Toast.LENGTH_LONG).show()
             } catch (e:Exception){
                 Log.d("CODIGO", e.message)
             }
