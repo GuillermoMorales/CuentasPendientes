@@ -30,6 +30,7 @@ abstract class FavoritesAdapter internal  constructor(context: Context): Recycle
         val currentBook = books[position]
 
         holder.name.text = currentBook.name
+
         holder.editorial.text = currentBook.editorial
         holder.checkBox.isChecked = true
 
