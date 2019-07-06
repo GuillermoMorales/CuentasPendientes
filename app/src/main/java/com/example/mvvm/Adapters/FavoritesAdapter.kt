@@ -32,7 +32,7 @@ abstract class FavoritesAdapter internal  constructor(context: Context): Recycle
         holder.name.text = currentBook.name
 
         holder.editorial.text = currentBook.editorial
-
+        holder.checkBox.isChecked = true
 
         setClickListenerToFavoriteBook(holder,currentBook)
 
@@ -47,6 +47,6 @@ abstract class FavoritesAdapter internal  constructor(context: Context): Recycle
         val name:TextView = itemView.name
         val editorial:TextView = itemView.editorial
         val container:LinearLayout = itemView.bookContainer
-
+        val checkBox:CheckBox = itemView.checkbox_book
     }
 }

@@ -32,7 +32,9 @@ abstract  class LibraryAdapter internal constructor(context: Context): RecyclerV
         holderLibrary.name.text = currentBook.name
         holderLibrary.editorial.text = currentBook.editorial
 
-
+        if (currentBook.favorite==1){
+            holderLibrary.checkBox.isChecked = true
+        }
 
         setClickListenerToBook(holderLibrary,currentBook)
     }
@@ -46,7 +48,7 @@ abstract  class LibraryAdapter internal constructor(context: Context): RecyclerV
         val name:TextView = itemView.name
         val editorial:TextView = itemView.editorial
         val container:LinearLayout = itemView.bookContainer
-
+        val checkBox:CheckBox = itemView.checkbox_book
     }
 
 }
