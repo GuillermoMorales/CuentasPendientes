@@ -40,13 +40,7 @@ class FavoritesFragment : Fragment() {
                     val nextAction = FavoritesFragmentDirections.nextAction(cuenta.name,cuenta.editorial,cuenta.favorite)
                     Navigation.findNavController(it).navigate(nextAction)
                 }
-                holder.checkBox.setOnClickListener {
-                    if (holder.checkBox.isChecked){
-                        viewModel.updateFavorite(cuenta.id,1)
-                    } else{
-                        viewModel.updateFavorite(cuenta.id,0)
-                    }
-                }
+
             }
         }
 
